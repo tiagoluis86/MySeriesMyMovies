@@ -25,4 +25,5 @@ urlpatterns = [
     path('index/', views.index),
     path('', RedirectView.as_view(url='/index/')),
     path('logout/', views.logout_user),
+    path('midia/', views.midia),
 ]
