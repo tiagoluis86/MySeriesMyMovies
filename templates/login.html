@@ -1,0 +1,53 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row" style="margin-top: 30px; background-color: #FFFFFF;">
+        <div class="col;" style="margin-bottom: 30px" style="border-style: solid; margin-top: 30px; background-color: #FFFFFF;">
+            <h3>Welcome, please login to enter</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col" style="margin-top: 30px; background-color: #FFFFFF;">
+
+              
+
+
+        </div>
+
+        <div class="col" style="margin-top: 30px; background-color: #FFFFFF;">
+            <form action="submit" method="POST">{% csrf_token %}
+            <div align="left">
+            <label>User:</label>
+                 <div class="w-100 d-none d-md-block"></div>
+            <input type="text" name="username">
+                 <div class="w-100 d-none d-md-block"></div>
+            <label>Password:</label>
+                  <div class="w-100 d-none d-md-block"></div>
+            <input type="password" name="password">
+
+            <button type="submit">Login</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 30px; background-color: #FFFFFF;">
+
+    <p>MySeriesMyMovies 2022 - by Tiago Custódio</p>
+
+</div>
+
+    {% for message in messages %}
+        <div align="center">
+            <strong>Erro! </strong>{{ message }}
+        </div>
+    {% endfor %}
+</body>
+
+{% endblock %}

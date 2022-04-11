@@ -1,0 +1,16 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<div class="container" style="border-style: solid; background-color: #FFFFFF;">
+    {% for midia in midias %}
+    <div class="container">
+        <h2>{{ midia.titulo }} </h2>
+        <h3>Sinopse: {{ midia.sinopse }}</h3>
+        <h3>Nota: {{ midia.nota }}</h3>
+        <p>{{ midia.avaliacao }}</p>
+    </div> 
+    {% endfor %}
+<div class="container">
+
+{% endblock %}    
