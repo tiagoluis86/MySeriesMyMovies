@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from core import views
 from django.views.generic import RedirectView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/index/')),
     path('logout/', views.logout_user),
     path('midia/', views.midia),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
