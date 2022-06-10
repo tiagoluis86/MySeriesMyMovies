@@ -41,13 +41,9 @@ def index(request):
 
 @login_required(login_url="/login/")
 def midia(request):
-    usuario = request.user
-    
-    midia = Midia.objects.filter(usuario=usuario)
-    minhamidia =  {'midias': midia}
+    response = request.GET.get('https://tastedive.com/api/similar')    
+    minhamidia =  {'midias': response}
     return render(request, "midia.html", minhamidia)
-
-
 
    
 
