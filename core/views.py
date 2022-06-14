@@ -42,8 +42,8 @@ def index(request):
 
 @login_required(login_url="/login/")
 def midia(request):
-    conteudo = requests.get('https://api.chucknorris.io/jokes/random')    
-    content = conteudo.url
+    conteudo = requests.get('https://tastedive.com/api/similar?q=american+beauty%2C+pulp+fiction')    
+    content = conteudo.json()
     minhamidia =  {'midias': content}
     return render(request, "midia.html", minhamidia)
 
