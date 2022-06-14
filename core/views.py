@@ -6,6 +6,7 @@ from django.contrib import messages
 from datetime import datetime, timedelta
 from django.http.response import Http404
 from core.models import Profile, Midia
+import requests
 
 # Create your views here.
 
@@ -41,8 +42,9 @@ def index(request):
 
 @login_required(login_url="/login/")
 def midia(request):
-    response = request.GET.get('https://tastedive.com/api/similar')    
-    minhamidia =  {'midias': response}
+    conteudo = requests.get('https://api.chucknorris.io/jokes/random')    
+    content = conteudo.url
+    minhamidia =  {'midias': content}
     return render(request, "midia.html", minhamidia)
 
    

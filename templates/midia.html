@@ -3,12 +3,9 @@
 {% block content %}
 
 <div class="container" style="margin-top: 30px; padding: 15px; background-color: #FFFFFF; border-style: solid; border-color: black;">
-    {% for midia in midias %}
+    {% for content in midias %}
     <div class="container">
-        <h2>{{ midia.titulo }} </h2>
-        <h3>Sinopse: {{ midia.sinopse }}</h3>
-        <h3>Nota: {{ midia.nota }}</h3>
-        <p>{{ midia.avaliacao }}</p>
+        <h2>{{ content }} </h2>        
     </div> 
     {% endfor %}
 </div>
