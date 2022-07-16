@@ -3,10 +3,19 @@
 {% block content %}
 
 <div class="container" style="margin-top: 30px; padding: 15px; background-color: #FFFFFF; border-style: solid; border-color: black;">
-   
     <div class="container">
-        <h2>{{ midias }} </h2>        
+        <form method="POST">{% csrf_token %}
+            <input name="search">
+            <input type="submit">
+        </form>        
+    </div>
+    <div class="container">
+        <h2>{{ midias }} </h2>  
+        <button type="button">Adicionar à minha biblioteca</button>       
     </div> 
+    <div class="container">
+        <h3>Minha biblioteca</h3>
+    </div>
     
 </div>
 

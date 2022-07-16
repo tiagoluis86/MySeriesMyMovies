@@ -41,10 +41,13 @@ def index(request):
     return render(request, 'index.html', info)
 
 @login_required(login_url="/login/")
-def midia(request):
-    conteudo = requests.get('https://tastedive.com/api/similar?q=american+beauty%2C+pulp+fiction')    
-    content = conteudo.json()
-    minhamidia =  {'midias': content}
+def midia(request):   
+    minhamidia = {}
+    if request.method == "POST":
+        busca = request.POST.get('search')
+        conteudo = requests.get('https://tastedive.com/api/similar?q={}'.format(busca))    
+        content = conteudo.json()
+        minhamidia =  {'midias': content}
     return render(request, "midia.html", minhamidia)
 
    
